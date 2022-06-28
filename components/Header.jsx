@@ -1,11 +1,5 @@
 import Link from "next/link";
-import { useDataContext } from "../context/DataContext";
-
 export default function Header() {
- const { getDatos } = useDataContext();
-  console.log(getDatos);
-
-
   return (
     <nav>
       <ul>
