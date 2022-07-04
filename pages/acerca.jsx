@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import Layout from "../components/Layout";
+import Borrame from "../components/Borrame";
 import { useDataContext } from "../context/dataContext";
 
 export default function acerca() {
-  const { getDatos, datos } = useDataContext();
-  useEffect(() => {
-    getDatos();
-  }, []);
-  return <div>
+const { datos, getDatos } =useDataContext
+console.log(datos)
+return <div>
+      <Layout
+        titulo="acerca"
+        descripcion="Aqui la descripción para el seo de acerca"
+      >
     <h1>Acerca</h1>
-    <pre>{JSON.stringify(datos, null, 2)}</pre>
-
+{/* <Borrame></Borrame> */}
+      </Layout>
   </div>;
 }
+
