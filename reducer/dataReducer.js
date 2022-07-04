@@ -1,13 +1,13 @@
-import { GET_DATOS } from "./types";
+import { GET_DATOS, INYECTO_DATOS } from "./types";
 
-export const dataReducer = (state, action) => {
+export const dataReducer = (state = {}, action) => {
     const { type, payload } = action;
 
     switch (type) {
         case "GET_DATOS":
             return {
                 ...state,
-                datos: payload
+                "datos": payload
             }
                 
         default:

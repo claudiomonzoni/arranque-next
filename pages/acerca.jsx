@@ -1,17 +1,19 @@
 import Layout from "../components/Layout";
 import Borrame from "../components/Borrame";
-import { useDataContext } from "../context/dataContext";
+import Link from "next/link";
 
 export default function acerca() {
-const { datos, getDatos } =useDataContext
-console.log(datos)
+
 return <div>
       <Layout
         titulo="acerca"
         descripcion="Aqui la descripción para el seo de acerca"
       >
     <h1>Acerca</h1>
-{/* <Borrame></Borrame> */}
+<Borrame></Borrame>
+<Link href="/">
+          <a>Home</a>
+        </Link>
       </Layout>
   </div>;
 }
