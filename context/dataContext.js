@@ -13,16 +13,21 @@ export const DataProvider = ({children}) => {
   const laurl = "https://jsonplaceholder.typicode.com/users/";
   const stateInicial = [
   {
-    datos: []
+    datos: [
+      {
+        id: 1,
+        name: "Juan"
+      }
+    ]
   }
   ];
   const [datos, dispatch] = useReducer(dataReducer, stateInicial);
 
-  const getDatos = async () => {
-    const res = await axios.get(laurl);
+  const getDatos = async(res) => {
+    //  const res = await axios.get(laurl);
     dispatch({
       type: "GET_DATOS",
-      payload: res.data,
+      payload: res,
     });
   };
 

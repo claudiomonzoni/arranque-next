@@ -1,29 +1,13 @@
-import { useEffect } from "react";
-import { useDataContext } from "../context/dataContext";
-
-export default function Borrame() {
-  const { datos, getDatos } = useDataContext();
-  useEffect(() => {
-    getDatos();
-    console.log(datos.datos.length)
-  }, []);
+export default function Borrame(props) {
+  const datos = props.props.losdatos;
   return (
     <div>
       Desde Borrame
       {
-        datos.datos.length
-         ? datos.datos.map((item, index) =>  <div key={index}>{item.name}</div>)
-         : null
-        }
+       
+       datos.map((item, index) =>  <div key={index}>{item.name}</div>)
+         
+      }
     </div>
   );
 }
-
-// export async function getStaticProps(datos) {
-//   console.log("first")
-//   return {
-//     props: {
-//       datos: datos.datos,
-//     },
-//   };
-// }

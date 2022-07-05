@@ -9,7 +9,7 @@ import { useEffect } from "react";
 export default function Home() {
 const { datos, getDatos } = useDataContext();
 useEffect(() => {
-   getDatos()
+  //  getDatos()
   
 }
 , [])
