@@ -9,21 +9,16 @@ export const useDataContext = () => {
   return useContext(DataContext);
 };
 
-export const DataProvider = ({children}) => {
+export const DataProvider = ({ children }) => {
   const laurl = "https://jsonplaceholder.typicode.com/users/";
   const stateInicial = [
-  {
-    datos: [
-      {
-        id: 1,
-        name: "Juan"
-      }
-    ]
-  }
+    {
+      datos: [],
+    },
   ];
   const [datos, dispatch] = useReducer(dataReducer, stateInicial);
 
-  const getDatos = async(res) => {
+  const getDatos = async (res) => {
     //  const res = await axios.get(laurl);
     dispatch({
       type: "GET_DATOS",
